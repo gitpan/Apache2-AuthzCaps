@@ -7,10 +7,16 @@ WriteMakefile(
   AUTHOR           => 'Marius Gavrilescu <marius@ieval.ro>',
   MIN_PERL_VERSION => '5.14.0',
   LICENSE          => 'perl',
+  SIGN             => 1,
   PREREQ_PM        => {
-	Apache2::Access => 0,
-	Apache2::Const => 0,
-	Apache2::RequestRec => 0,
-	YAML::Any => 0,
+	  qw/YAML::Any 0/,
   },
+  META_MERGE       => {
+	  dynamic_config => 0,
+	  recommends   => {
+		  qw/Apache2::Access     0
+			 Apache2::Const      0
+			 Apache2::RequestRec 0/,
+	  }
+  }
 );

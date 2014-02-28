@@ -1,12 +1,15 @@
-package Apache2::AuthzCaps 0.001;
+package Apache2::AuthzCaps;
 
 use 5.014000;
 use strict;
 use warnings;
+use subs qw/OK DECLINED/;
+no if $] >= 5.017011, warnings => 'experimental::smartmatch';
+our $VERSION = '0.001001';
 
-use Apache2::Access;
-use Apache2::Const qw/OK DECLINED/;
-use Apache2::RequestRec;
+use if $ENV{MOD_PERL}, 'Apache2::Access';
+use if $ENV{MOD_PERL}, 'Apache2::Const' => qw/OK DECLINED/;
+use if $ENV{MOD_PERL}, 'Apache2::RequestRec';
 use YAML::Any qw/LoadFile DumpFile/;
 
 use parent qw/Exporter/;

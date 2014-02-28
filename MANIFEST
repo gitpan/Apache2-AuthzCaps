@@ -4,4 +4,6 @@ MANIFEST
 README
 t/Apache2-AuthzCaps.t
 lib/Apache2/AuthzCaps.pm
-META.yml                                 Module meta-data (added by MakeMaker)
+META.yml                                 Module YAML meta-data (added by MakeMaker)
+META.json                                Module JSON meta-data (added by MakeMaker)
+SIGNATURE                                Public-key signature (added by MakeMaker)
